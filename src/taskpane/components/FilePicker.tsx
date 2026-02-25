@@ -71,7 +71,7 @@ export const FilePicker: React.FC<FilePickerProps> = ({ onFilesChange, maxFiles 
   const [isDragging, setIsDragging] = useState(false);
   const [typeError, setTypeError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-
+  const MAX_COMBINED_SIZE = 50 * 1024 * 1024;
   const addFiles = useCallback(
     (incoming: FileList | File[]) => {
       setTypeError(null);
@@ -89,7 +89,12 @@ export const FilePicker: React.FC<FilePickerProps> = ({ onFilesChange, maxFiles 
         setTypeError(`Only ${maxFiles} file${maxFiles > 1 ? "s" : ""} can be uploaded at a time.`);
         return;
       }
-
+      const existingSize = selectedFiles.reduce((sum, sf) => sum + sf.file.size, 0);
+      const incomingSize = arr.reduce((sum, f) => sum + f.size, 0);
+      if (existingSize + incomingSize > MAX_COMBINED_SIZE) {
+        setTypeError("Combined file size exceeds the 50MB limit. Please select smaller files.");
+        return;
+      }
       setSelectedFiles((prev) => {
         const existing = new Set(prev.map((sf) => sf.file.name + sf.file.size));
         const newFiles = arr
