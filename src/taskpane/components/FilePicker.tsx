@@ -65,8 +65,7 @@ function isValidFile(file: File): boolean {
     ACCEPTED_EXTENSIONS.some((ext) => file.name.toLowerCase().endsWith(ext))
   );
 }
-
-export const FilePicker: React.FC<FilePickerProps> = ({ onFilesChange, maxFiles = 1 }) => {
+export const FilePicker: React.FC<FilePickerProps> = ({ onFilesChange, maxFiles = 10 }) => {
   const [selectedFiles, setSelectedFiles] = useState<SelectedFile[]>([]);
   const [isDragging, setIsDragging] = useState(false);
   const [typeError, setTypeError] = useState<string | null>(null);
