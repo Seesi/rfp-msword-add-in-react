@@ -4,13 +4,14 @@
   xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
   xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>fce6c39b-b2a3-46aa-a968-dbd698f8e8cd</Id>
-  <Version>1.0.0.1</Version>
+  <Version>1.0.0.3</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="RFPComplianceChecker" />
   <Description DefaultValue="RFP compliance checker." />
-  <IconUrl DefaultValue="https://www.contoso.com/assets/icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="https://www.contoso.com/assets/icon-64.png" />
+  <IconUrl DefaultValue="https://seesi.github.io/rfp-msword-add-in-react/assets/icon-32.png" />
+  <HighResolutionIconUrl
+    DefaultValue="https://seesi.github.io/rfp-msword-add-in-react/assets/icon-64.png" />
   <SupportUrl DefaultValue="https://www.contoso.com/help" />
   <AppDomains>
     <AppDomain>https://www.contoso.com</AppDomain>
@@ -19,7 +20,7 @@
     <Host Name="Document" />
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://www.contoso.com/taskpane.html" />
+    <SourceLocation DefaultValue="https://seesi.github.io/rfp-msword-add-in-react/taskpane.html" />
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
@@ -66,15 +67,20 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://www.contoso.com/assets/icon-16.png" />
-        <bt:Image id="Icon.32x32" DefaultValue="https://www.contoso.com/assets/icon-32.png" />
-        <bt:Image id="Icon.80x80" DefaultValue="https://www.contoso.com/assets/icon-80.png" />
+        <bt:Image id="Icon.16x16"
+          DefaultValue="https://seesi.github.io/rfp-msword-add-in-react/assets/icon-16.png" />
+        <bt:Image id="Icon.32x32"
+          DefaultValue="https://seesi.github.io/rfp-msword-add-in-react/assets/icon-32.png" />
+        <bt:Image id="Icon.80x80"
+          DefaultValue="https://seesi.github.io/rfp-msword-add-in-react/assets/icon-80.png" />
       </bt:Images>
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl"
           DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812" />
-        <bt:Url id="Commands.Url" DefaultValue="https://www.contoso.com/commands.html" />
-        <bt:Url id="Taskpane.Url" DefaultValue="https://www.contoso.com/taskpane.html" />
+        <bt:Url id="Commands.Url"
+          DefaultValue="https://seesi.github.io/rfp-msword-add-in-react/commands.html" />
+        <bt:Url id="Taskpane.Url"
+          DefaultValue="https://seesi.github.io/rfp-msword-add-in-react/taskpane.html" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!" />
