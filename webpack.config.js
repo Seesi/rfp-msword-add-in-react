@@ -100,24 +100,24 @@ module.exports = async (env, options) => {
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
-      proxy: [
-  {
-    context: ["/api"],
-    target: "https://func-app-mswordaddin-ai-eabecyf8c5bgfddn.westeurope-01.azurewebsites.net",
-    changeOrigin: true,
-    secure: true,
-    timeout: 300000, // 5 minutes
-    proxytimeout: 300000, // 5 minutes
-    selfHandleResponse: false, // let the proxy stream the response through
-    on: {
-      proxyRes: (proxyRes) => {
-        // Disable buffering so chunks are forwarded immediately
-        proxyRes.headers["x-accel-buffering"] = "no";
-        proxyRes.headers["cache-control"] = "no-cache";
-      },
-    },
-  },
-],
+//       proxy: [
+//   {
+//     context: ["/api"],
+//     target: "https://func-app-mswordaddin-ai-eabecyf8c5bgfddn.westeurope-01.azurewebsites.net",
+//     changeOrigin: true,
+//     secure: true,
+//     timeout: 300000, // 5 minutes
+//     proxytimeout: 300000, // 5 minutes
+//     selfHandleResponse: false, // let the proxy stream the response through
+//     on: {
+//       proxyRes: (proxyRes) => {
+//         // Disable buffering so chunks are forwarded immediately
+//         proxyRes.headers["x-accel-buffering"] = "no";
+//         proxyRes.headers["cache-control"] = "no-cache";
+//       },
+//     },
+//   },
+// ],
       server: {
         type: "https",
         options: env.WEBPACK_BUILD || options.https !== undefined ? options.https : await getHttpsOptions(),
