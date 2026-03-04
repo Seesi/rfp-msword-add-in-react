@@ -2,9 +2,9 @@ import { useState } from "react";
 import { SelectedFile } from "../components/FilePicker";
 
 // GetComplianceFromFiles — accepts multipart form-data with field "files"
-// const UPLOAD_ENDPOINT =
-//   "https://func-app-mswordaddin-ai-eabecyf8c5bgfddn.westeurope-01.azurewebsites.net/api/compliance/files";
-const UPLOAD_ENDPOINT = "/api/compliance/files";
+const UPLOAD_ENDPOINT =
+  "https://func-app-mswordaddin-ai-eabecyf8c5bgfddn.westeurope-01.azurewebsites.net/api/compliance/files";
+// const UPLOAD_ENDPOINT = "/api/compliance/files";
 // How long to wait before giving up on the request
 const REQUEST_TIMEOUT_MS = 300000; // 30 seconds
 
